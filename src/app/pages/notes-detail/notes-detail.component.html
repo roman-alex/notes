@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="media pt-5">
+        <img class="d-flex mr-3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAMFBMVEX///+5ubnu7u69vb3c3Nz7+/vT09P29vbh4eHGxsbCwsLLy8vY2Njl5eXy8vLPz8/LEQ5YAAABNElEQVRYhe2X226EMAxEcW4QIPD/f7tFLSwNE9aTqK206rzPwYmNB7ruX7fyxpil2t3Po2yyzlf5nRyKNYQgJwXeP8s3rT3pN5LJDhxgygEiM+Pvr36RRAAGBLBEL1YEEKcHWAgY9QDoFzFa/6WJ7BlKgKkVEFsB8msAOEcMwLUCmiv4sS6o56A0yvrNFjFAv5VmDNBHBL4E4nXuRgRgtiKcBGa1e7CTuHQBJZDZcrkFNt7yRjBL/VMZgNjp7wJIIQPEpG+jTzgb46BimICT8auOF930Cb5GJ9lwU4Z3Nw9/ai2F7KCyb4JVLIU9hg9y3W7FLChoym4zb/trjUub/+MYp4sohuGtnkEFPwsVci0H2GR3gLr/ufaJqvUfX7/VAPfngP0I4O9ApWOUfB3BMn8Qb60HPMwJ6WwWpmIAAAAASUVORK5CYII=" alt="Generic placeholder image">
+        <div class="media-body">
+            <h5 class="mt-0">Media heading</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
+            vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+            lacinia congue felis in faucibus.
+
+            <div class="media mt-3">
+                <a class="d-flex pr-3" href="#">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAMFBMVEX///+5ubnu7u69vb3c3Nz7+/vT09P29vbh4eHGxsbCwsLLy8vY2Njl5eXy8vLPz8/LEQ5YAAABNElEQVRYhe2X226EMAxEcW4QIPD/f7tFLSwNE9aTqK206rzPwYmNB7ruX7fyxpil2t3Po2yyzlf5nRyKNYQgJwXeP8s3rT3pN5LJDhxgygEiM+Pvr36RRAAGBLBEL1YEEKcHWAgY9QDoFzFa/6WJ7BlKgKkVEFsB8msAOEcMwLUCmiv4sS6o56A0yvrNFjFAv5VmDNBHBL4E4nXuRgRgtiKcBGa1e7CTuHQBJZDZcrkFNt7yRjBL/VMZgNjp7wJIIQPEpG+jTzgb46BimICT8auOF930Cb5GJ9lwU4Z3Nw9/ai2F7KCyb4JVLIU9hg9y3W7FLChoym4zb/trjUub/+MYp4sohuGtnkEFPwsVci0H2GR3gLr/ufaJqvUfX7/VAPfngP0I4O9ApWOUfB3BMn8Qb60HPMwJ6WwWpmIAAAAASUVORK5CYII=" alt="Generic placeholder image">
+                </a>
+                <div class="media-body">
+                    <h5 class="mt-0">Media heading</h5>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                    purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+                    vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+            </div>
+        </div>
+    </div>
+    <form class="py-5">
+        <div class="form-group">
+            <label for="exampleInputName">Введите имя</label>
+            <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+            <small id="nameHelp" class="form-text text-muted">Имя должно содержать два слова, оба с большой буквы</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleTextarea">Текст заметки</label>
+            <textarea class="form-control" id="exampleTextarea" rows="2"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">Файл заметки</label>
+            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+            <small id="fileHelp" class="form-text text-muted">Максимальный размер 2 Mb</small>
+        </div>
+        <fieldset class="form-group">
+            <legend>Хранилище</legend>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                    Firebase
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Local storage
+                </label>
+            </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Сделать заметку</button>
+    </form>
+</div>
+

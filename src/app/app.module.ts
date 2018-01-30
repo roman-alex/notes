@@ -7,19 +7,27 @@ import {AppComponent} from './app.component';
 import {AngularFireModule} from 'angularfire2';
 import {environment} from '../environments/environment';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
+import { NotesListComponent } from './pages/notes-list/notes-list.component';
+import { NotesDetailComponent } from './pages/notes-detail/notes-detail.component';
+import {StorageService} from './services/storage.service';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        NotesListComponent,
+        NotesDetailComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         AngularFireModule.initializeApp(environment.firebase),
-        AngularFirestoreModule
+        AngularFirestoreModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
-    providers: [],
+    providers: [StorageService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
