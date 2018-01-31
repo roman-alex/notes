@@ -10,22 +10,23 @@
     </div>
     <form class="py-5" [formGroup]="noteForm" novalidate (ngSubmit)="submit()">
         <div class="form-group">
-            <label for="exampleInputName">Введите имя</label>
-            <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" formControlName="name">
-            <small id="nameHelp" class="form-text text-muted">Имя должно содержать два слова, оба с большой буквы</small>
+            <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" formControlName="name" placeholder="Имя">
+            <div class="alert alert-danger mt-1" role="alert" *ngIf="noteForm.controls['name'].invalid && noteForm.controls['name'].touched">
+                <strong>Ошибка валидации!</strong> Имя должно содержать два слова, оба с большой буквы
+            </div>
         </div>
         <div class="form-group">
-            <label for="exampleTextarea">Текст заметки</label>
-            <textarea class="form-control" id="exampleTextarea" rows="2" formControlName="content"></textarea>
+            <textarea class="form-control" id="exampleTextarea" rows="2" formControlName="content" placeholder="Текст заметки"></textarea>
+            <div class="alert alert-danger mt-1" role="alert" *ngIf="noteForm.controls['content'].invalid && noteForm.controls['content'].touched">
+                <strong>Ошибка валидации!</strong> Это поле должно быть заполнено
+            </div>
         </div>
         <div class="form-group">
-            <label for="exampleInputFile">Файл заметки</label>
             <input type="hidden" name="fileHidden" formControlName="file"/>
-            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" (change)="onFileChange($event)">
+            <input type="file" #fileInput class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" (change)="onFileChange($event)" accept=".jpg, .jpeg, .png" />
             <small id="fileHelp" class="form-text text-muted">Максимальный размер 2 Mb</small>
         </div>
         <fieldset class="form-group">
-            <legend>Хранилище</legend>
             <div class="form-check">
                 <label class="form-check-label">
                     <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
@@ -39,7 +40,8 @@
                 </label>
             </div>
         </fieldset>
-        <button type="submit" class="btn btn-primary">Сделать заметку</button>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!noteForm.valid">Сделать заметку</button>
     </form>
 </div>
 

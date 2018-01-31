@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {StorageService} from '../../services/storage.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
@@ -8,26 +8,36 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
     styleUrls: ['./notes-list.component.scss']
 })
 export class NotesListComponent implements OnInit {
-
+    @ViewChild('fileInput') fileInput: any;
     noteForm: FormGroup;
 
     constructor(private storageService: StorageService, private formBuilder: FormBuilder) {
         this.noteForm = formBuilder.group({
-            name : ['', [Validators.required]],
+            name : ['', [Validators.required, Validators.pattern(/[А-Я-A-Z]/)] ],
             content : ['', [ Validators.required]],
-            file: [null]
+            file: []
         });
     }
 
     onFileChange($event) {
-        const file = $event.target.files[0];
-        this.noteForm.controls['file'].setValue(file ? file : null);
+        let file = $event.target.files[0];
+        if ( file.size > 2000000) {
+            alert('Файл превышает 2МБ');
+            this.fileInput.nativeElement.value = '';
+            file = '';
+        } else {
+            this.noteForm.controls['file'].setValue(file ? file : null);
+        }
     }
 
     submit() {
-        console.log(this.noteForm);
-        // const note = {};
-        // this.storageService.addNote(note);
+        if (this.noteForm.valid) {
+            console.log(this.noteForm);
+            // const note = {};
+            // this.storageService.addNote(note);
+        } else {
+            console.log('Форма не валидна');
+        }
     }
 
     ngOnInit() {
